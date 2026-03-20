@@ -6,6 +6,13 @@ header('Content-Type: application/json');
 require_once 'controllers/MainController.php';
 
 $controller = new MainController();
-$response = $controller->index();
+
+$route = $_GET['route'] ?? '';
+
+if ($route === 'items') {
+    $response = $controller->getItems();
+} else {
+    $response = $controller->index();
+}
 
 echo json_encode($response);
