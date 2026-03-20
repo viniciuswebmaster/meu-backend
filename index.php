@@ -3,7 +3,9 @@
 ini_set('display_errors', 0);
 header('Content-Type: application/json');
 
-echo json_encode([
-    "status" => "ok",
-    "message" => "API funcionando"
-]);
+require_once 'controllers/MainController.php';
+
+$controller = new MainController();
+$response = $controller->index();
+
+echo json_encode($response);
