@@ -1,5 +1,7 @@
 <?php
 
+require_once __DIR__ . '/../services/ItemService.php';
+
 class MainController {
 
     public function index() {
@@ -10,9 +12,7 @@ class MainController {
     }
 
     public function getItems() {
-        return [
-            ["id" => 1, "name" => "Item 1"],
-            ["id" => 2, "name" => "Item 2"]
-        ];
+        $service = new ItemService();
+        return $service->getAllItems();
     }
 }
