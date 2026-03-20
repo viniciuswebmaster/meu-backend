@@ -15,4 +15,11 @@ class MainController {
         $service = new ItemService();
         return $service->getAllItems();
     }
+
+    public function createItem() {
+        return [
+            "status" => "created"
+        ];
+    }
+
 }

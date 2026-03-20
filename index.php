@@ -11,6 +11,8 @@ $route = $_GET['route'] ?? '';
 
 if ($route === 'items') {
     $response = $controller->getItems();
+} elseif ($route === 'create') {
+    $response = $controller->createItem();
 } else {
     $response = $controller->index();
 }
