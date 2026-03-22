@@ -1,24 +1,34 @@
 # PHP Backend API
 
-Simple backend API built with pure PHP, following a layered architecture.
+Backend API built with pure PHP using a layered architecture (Controller, Service, Repository).
+
+## Overview
+
+This project demonstrates how to build a simple, structured backend without frameworks, focusing on clarity and separation of concerns.
 
 ## Features
 
-- Basic routing
-- Controller / Service / Repository structure
-- MySQL integration
-- JSON responses
+- REST-like routing using query parameters
+- Layered architecture:
+  - Controller
+  - Service
+  - Repository
+- MySQL integration with PDO
+- Standardized JSON responses
 
 ## Tech Stack
 
-- PHP
+- PHP (no framework)
 - MySQL
 - Git
 
 ## Endpoints
 
-- `GET /?route=items` → list items
-- `GET /?route=create` → create item (mock)
+### List items
+GET /?route=items
+
+### Create item
+GET /?route=create&name=ItemName
 
 ## How to run
 
