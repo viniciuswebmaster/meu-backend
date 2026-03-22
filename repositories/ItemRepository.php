@@ -15,4 +15,10 @@ class ItemRepository {
         $stmt = $this->conn->query("SELECT * FROM items");
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function create($name) {
+        $stmt = $this->conn->prepare("INSERT INTO items (name) VALUES (:name)");
+        $stmt->bindParam(':name', $name);
+        return $stmt->execute();
+    }
 }

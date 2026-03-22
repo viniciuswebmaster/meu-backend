@@ -17,9 +17,13 @@ class MainController {
     }
 
     public function createItem() {
+        $name = $_GET['name'] ?? 'Default Item';
+
+        $service = new ItemService();
+        $created = $service->createItem($name);
+
         return [
-            "status" => "created"
+            "created" => $created
         ];
     }
-
 }

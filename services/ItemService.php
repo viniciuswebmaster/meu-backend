@@ -13,4 +13,8 @@ class ItemService {
     public function getAllItems() {
         return $this->repo->getAll();
     }
+
+    public function createItem($name) {
+        return $this->repo->create($name);
+    }
 }
