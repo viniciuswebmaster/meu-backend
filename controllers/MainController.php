@@ -6,10 +6,10 @@ require_once __DIR__ . '/../services/ItemService.php';
 class MainController {
 
     public function index() {
-        return [
+        return Response::json([
             "status" => "ok",
             "message" => "API funcionando"
-        ];
+        ]);
     }
 
     public function getItems() {
