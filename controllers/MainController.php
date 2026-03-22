@@ -1,5 +1,6 @@
 <?php
 
+require_once __DIR__ . '/../helpers/Response.php';
 require_once __DIR__ . '/../services/ItemService.php';
 
 class MainController {
@@ -13,7 +14,7 @@ class MainController {
 
     public function getItems() {
         $service = new ItemService();
-        return $service->getAllItems();
+        return Response::json($items);
     }
 
     public function createItem() {
@@ -22,8 +23,6 @@ class MainController {
         $service = new ItemService();
         $created = $service->createItem($name);
 
-        return [
-            "created" => $created
-        ];
+        return Response::json(["created" => $created]);
     }
 }
